@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports Events | Eventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+        width: 100%; /* full width */
+        height: 300px; /* fixed height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertically centers content */
+        align-items: center; /* horizontally centers content */
+        color: white; /* optional: makes text readable on dark images */
+        text-shadow: 0 1px 5px rgba(0,0,0,0.7); /* optional: improves readability */
+    }
+ .hero-section h1{
+    color: #01041d;
+    text-shadow: none;
+    }
+
+    .hero-section p{
+      color: #282c2f;
+      text-shadow: none;
+    }
+body {
+    background: linear-gradient(
+           /* #436ebe, */
+           #fbdada,
+          #bdcef7,   /* dark top */
+     
+        #d4d8de,
+        #e5e7eb  
+    );
+    min-height: 100vh;
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar include -->
+<div id="navbar"></div>
+<div class="page-overlay"></div>
+  <div class="page-content">
+<div class="hero-section text-center mb-1 reveal">
+    <h1 class="fw-bold display-5">Sports Events</h1>
+    <p class="fs-5">Football • Cricket • Athletics • Volleyball • Chess</p>
+</div>
+
+<div class="container mt-1 mb-5">
+    <div class="row g-4">
+            <!-- Cricket Tournament -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/s1.jpg" class="card-img-top p-4 img-dim" alt="Cricket">
+                    <div class="card-body">
+                        <h5 class="card-title">Inter-College Cricket</h5>
+                        <p class="card-text">T20 cricket tournament with cash prizes and trophies.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Cricket Ground</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Football Championship -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/s2.jpg" class="card-img-top p-4" alt="Football">
+                    <div class="card-body">
+                        <h5 class="card-title">Football Championship</h5>
+                        <p class="card-text">7-a-side football competition for all departments.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Football Ground</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Basketball Tournament -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/s3.jpg" class="card-img-top p-4" alt="Basketball">
+                    <div class="card-body">
+                        <h5 class="card-title">Basketball Tournament</h5>
+                        <p class="card-text">Fast-paced basketball matches with professional referees.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i>Basketball Ground</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Badminton Singles -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/s4.jpg" class="card-img-top p-4" alt="Badminton">
+                    <div class="card-body">
+                        <h5 class="card-title">Badminton Singles</h5>
+                        <p class="card-text">Men's and Women's singles competition with ranking points.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i>Badminton Ground</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Table Tennis -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/s5.png" class="card-img-top p-4" alt="Table Tennis">
+                    <div class="card-body">
+                        <h5 class="card-title">Table Tennis Championship</h5>
+                        <p class="card-text">Single and doubles matches in knockout format.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i>TT Ground</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Chess Tournament -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/s6.jpg" class="card-img-top p-4" alt="Chess">
+                    <div class="card-body">
+                        <h5 class="card-title">Chess Championship</h5>
+                        <p class="card-text">Classical and blitz chess with Elo rating consideration.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i>Chess Hall</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="footer"></div>
+<script type="module" src="sports.js"></script>
+
+<script type="module" src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scroll.js"></script>
+</body> 
+</html>

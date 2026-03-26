@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Events | Eventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+            width: 100%; /* full width */
+            height: 300px; /* fixed height */
+            /* background-size: cover; makes the image cover the div */
+            /* background-position: center; centers the image */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertically centers content */
+            align-items: center; /* horizontally centers content */
+            color: white; /* optional: makes text readable on dark images */
+            text-shadow: none; /* optional: improves readability */
+             opacity: 0;
+            transform: translateY(20px);
+            animation: heroFade 0.9s ease-out forwards;
+        }
+        body {
+    background: linear-gradient(
+           /* #436ebe, */
+           #e6d6d6,
+          #acaeb3,   /* dark top */
+           #bfc5cc,
+         #e5e7eb  
+    );
+    min-height: 100vh;
+}
+    .hero-section h1{
+    color: #01041d;
+    text-shadow: none;
+    }
+
+    .hero-section p{
+      color: #282c2f;
+      text-shadow: none;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Navbar include -->
+<div id="navbar"></div>
+<div class="page-overlay"></div>
+<div class="page-content">
+
+<div class="hero-section text-center mb-1 reveal">
+    <h1 class="fw-bold display-5">Technical Events</h1>
+    <p class="fs-5">Workshops • Hackathons • Seminars • Robotics</p>
+</div>
+
+<div class="container mt-1 mb-5">
+    <div class="row g-4">
+
+            <!-- Hackathon -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/t1.png" class="card-img-top p-4" alt="Hackathon">
+                    <div class="card-body">
+                        <h5 class="card-title">24-Hour Hackathon</h5>
+                        <p class="card-text">Build innovative solutions under time pressure with tech experts.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 10 Feb 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Computer Lab</p>
+                        <div class="d-flex gap-2 mt-2">
+    
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                        
+                    </div>                    
+                </div>
+            </div>
+        
+            <!-- Coding Competition -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/t2.png" class="card-img-top p-4" alt="Coding Competition">
+                    <div class="card-body">
+                        <h5 class="card-title">Coding Competition</h5>
+                        <p class="card-text">Solve algorithmic challenges in Python, Java, or C++.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 15 Feb 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Robotics Lab</p>
+                        <div class="d-flex gap-2 mt-2">
+    
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Robotics Workshop -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/t3.png" class="card-img-top p-4" alt="Robotics">
+                    <div class="card-body">
+                        <h5 class="card-title">Robotics Workshop</h5>
+                        <p class="card-text">Learn to build and program autonomous robots from scratch.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 15 Feb 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Robotics Lab</p>
+                        <div class="d-flex gap-2 mt-2">
+    
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- AI/ML Summit -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/t4.png" class="card-img-top p-4" alt="AI/ML">
+                    <div class="card-body">
+                        <h5 class="card-title">AI/ML Summit</h5>
+                        <p class="card-text">Explore cutting-edge AI technologies and machine learning models.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 20 Feb 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Auditorium</p>
+                        <div class="d-flex gap-2 mt-2">
+    
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Web Dev Bootcamp -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/t5.png" class="card-img-top p-4" alt="Web Development">
+                    <div class="card-body">
+                        <h5 class="card-title">Web Dev Bootcamp</h5>
+                        <p class="card-text">Full-stack development with React, Node.js, and MongoDB.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 25 Feb 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Seminar Hall</p>
+                        <div class="d-flex gap-2 mt-2">
+    
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Cybersecurity Workshop -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/t6.png" class="card-img-top p-4" alt="Cybersecurity">
+                    <div class="card-body">
+                        <h5 class="card-title">Cybersecurity Workshop</h5>
+                        <p class="card-text">Learn ethical hacking and network security fundamentals.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 28 Feb 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Lab 2</p>
+                        <div class="d-flex gap-2 mt-2">
+    
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div id="footer"></div>
+<script type="module" src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scroll.js"></script>
+</body>
+</html>

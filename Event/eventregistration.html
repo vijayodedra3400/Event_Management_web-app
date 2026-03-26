@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Payments & Order Summary | Eventure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    .payment-table td {
+      height: 60px;
+      vertical-align: middle;
+      cursor: pointer;
+      padding-left: 20px;
+      font-weight: 500;
+      transition: background-color 0.25s ease;
+    }
+
+    .payment-table tr:hover:not(.active) td {
+      background-color: #eadce434;
+    }
+
+    .payment-table tr.active td {
+      background-color: #f3e8f9 !important;
+      border-left: 4px solid #be82e6;
+    }
+
+    .card-header {
+      background-color: #9c51ce;
+      color: white;
+      font-weight: bold;
+    }
+
+    .card-payment {
+      border-radius: 24px;
+      min-height: 450px;
+    }
+
+    .lavender-outline-btn {
+    color: black;
+    border: 2px solid black;
+    background-color: white;
+    font-weight: 500;
+    }
+
+    .lavender-outline-btn:hover {
+        background-color: #e6cff3;
+        color: black;
+    }
+    
+  </style>
+</head>
+
+<body class="bg-light">
+<div id="registration_navbar"></div>
+
+<div class="container-fluid mt-5">
+  <div class="row g-4">
+
+    <!-- LEFT: PAYMENT OPTIONS -->
+    <div class="col-md-3">
+      <div class="card card-payment">
+        <div class="card-header">Payment options</div>
+
+        <table class="table mb-0 payment-table">
+          <tbody>
+            <tr class="active" onclick="selectMethod('upi', this)">
+              <td><i class="fas fa-qrcode me-2"></i> Pay by UPI</td>
+            </tr>
+            <tr onclick="selectMethod('card', this)">
+              <td><i class="fas fa-credit-card me-2"></i> Debit / Credit Card</td>
+            </tr>
+            <tr onclick="selectMethod('netbanking', this)">
+              <td><i class="fas fa-university me-2"></i> Net Banking</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MIDDLE: PAYMENT DETAILS -->
+    <div class="col-md-6">
+      <div class="card card-payment">
+        <div class="card-header" id="paymentTitle">Pay by UPI App</div>
+
+        <div class="card-body">
+          <!-- UPI -->
+          <div id="upiSection">
+            <button id="gpayBtn" class="btn lavender-outline-btn w-100 mb-2">
+              <i class="fab fa-google-pay me-2"></i> Google Pay
+            </button>
+          
+            <button id="addUpiBtn" class="btn lavender-outline-btn w-100 mb-2">
+              <i class="fas fa-plus me-2"></i> Add new UPI
+            </button>
+          
+            <button
+              class="btn lavender-outline-btn w-100"
+              onclick="showMyQR()">
+              <i class="fas fa-qrcode me-2"></i> Scan QR Code
+            </button>
+
+          </div>          
+
+          <!-- CARD -->
+          <div id="cardSection" class="d-none">
+            <input class="form-control mb-2" placeholder="Card Number">
+            <div class="row g-2">
+              <div class="col">
+                <input class="form-control" placeholder="MM/YY">
+              </div>
+              <div class="col">
+                <input class="form-control" placeholder="CVV">
+              </div>
+            </div>
+            <input class="form-control mt-2" placeholder="Cardholder Name">
+          </div>
+
+          <!-- NET BANKING -->
+          <div id="netbankingSection" class="d-none">
+            <select class="form-select">
+              <option selected disabled>Select Bank</option>
+              <option>SBI</option>
+              <option>HDFC</option>
+              <option>ICICI</option>
+              <option>Axis Bank</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+<div class="col-md-3">
+  <div class="card card-payment mb-3">
+    <div class="card-body">
+      <div class="card-header">Booking details</div>
+      <h6 class="fw-bold mt-2" id="eventName">Loading event...</h6>
+      <p class="text-muted small mb-0">
+        <span id="eventDate">Loading date</span> |
+        <span id="eventLocation">Loading location</span>
+      </p>
+      <hr>
+      <div class="d-flex justify-content-between">
+        <span>Ticket Price</span>
+        <span id="eventPrice">₹0</span>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <span>Service Fee</span>
+        <span id="orderTotal" >₹10.00</span>
+      </div>
+
+      <hr>
+
+      <div class="d-flex justify-content-between fw-bold">
+        <span>Order Total</span>
+        <span id="totalAmount">₹0</span>
+      </div>
+
+      <hr>
+
+      <div class="small text-muted mb-2">
+        <strong>User Information</strong>
+        <br>
+        <strong>Gmail:</strong>
+        <span id="summaryEmail">loading...</span><br>
+        <strong>Name:</strong>
+        <span id="summaryName">loading...</span><br>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-sm btn-outline-secondary w-100 mb-3"
+        data-bs-toggle="modal"
+        data-bs-target="#editInfoModal">
+        Edit Information
+      </button>
+
+      <div class="text-secondary d-flex justify-content-between">
+        <span>Amount Payable</span>
+        <b id="payableAmount">₹0</b>
+      </div>
+      <button id="payNowBtn" class="btn btn-primary w-100 mt-3 fw-bold" >
+        Pay Now
+      </button>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- EDIT INFO MODAL -->
+<div class="modal fade" id="editInfoModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Edit your information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="editName">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Cancel
+        </button>
+        <button class="btn lavender-outline-btn" onclick="saveUserInfo()">
+            Save changes
+          </button>
+        </div>
+
+    </div>
+  </div>
+</div>
+<!-- QR MODAL -->
+<div class="modal fade" id="qrModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-body text-center" id="qrModalBody">
+      </div>
+
+    </div>
+  </div>
+</div>
+<div id='footer'></div>
+<script type="module" src="script.js"></script>
+<script>
+/* ==========================
+   PAYMENT METHOD SWITCH
+========================== */
+function selectMethod(method, row) {
+  document.querySelectorAll(".payment-table tr")
+    .forEach(r => r.classList.remove("active"));
+  row.classList.add("active");
+
+  upiSection.classList.add("d-none");
+  cardSection.classList.add("d-none");
+  netbankingSection.classList.add("d-none");
+
+  if (method === "upi") {
+    upiSection.classList.remove("d-none");
+    paymentTitle.innerText = "Pay by UPI App";
+  }
+  if (method === "card") {
+    cardSection.classList.remove("d-none");
+    paymentTitle.innerText = "Pay by Card";
+  }
+  if (method === "netbanking") {
+    netbankingSection.classList.remove("d-none");
+    paymentTitle.innerText = "Net Banking";
+  }
+}
+
+/* ==========================
+   GOOGLE PAY BUTTON
+========================== */
+document.getElementById("gpayBtn").onclick = () => {
+  const amount =
+    document.getElementById("totalAmount")
+      .innerText.replace("₹", "").trim();
+
+  const upiLink =
+    `upi://pay?pa=eventure@upi&pn=Eventure&am=${amount}&cu=INR`;
+
+  showQR(upiLink, "Pay using Google Pay");
+  
+};
+
+/* ==========================
+   ADD NEW UPI BUTTON
+========================== */
+document.getElementById("addUpiBtn").onclick = () => {
+  const upi = prompt("Enter your UPI ID (example: name@bank)");
+
+  if (!upi) return;
+
+  const amount =
+    document.getElementById("totalAmount")
+      .innerText.replace("₹", "").trim();
+
+  const upiLink =
+    `upi://pay?pa=${upi}&pn=Eventure&am=${amount}&cu=INR`;
+
+  showQR(upiLink, "Pay using your UPI ID");
+};
+
+/* ==========================
+   FIXED QR CODE BUTTON
+========================== */
+function showMyQR() {
+  const qrBody = document.getElementById("qrModalBody");
+
+  qrBody.innerHTML = `
+    <h5 class="mb-3">Scan to Pay</h5>
+
+    <img 
+      src="Images/QR.jpeg"
+      style="max-width:220px; border-radius:10px; border:1px solid #ddd; padding:10px;"
+    />
+
+    <p class="small text-muted mt-3">
+      Scan using Google Pay / PhonePe / Paytm
+    </p>
+    <button class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">
+      Close
+    </button>
+    <button class="btn lavender-outline-btn ms-2" type='submit' data-bs-dismiss="modal">
+      Submit Payment
+    </button>
+  `;
+
+  new bootstrap.Modal(document.getElementById("qrModal")).show();
+}
+/* ==========================
+   QR GENERATOR FUNCTION
+========================== */
+function showQR(upiLink, title) {
+  const qrBody = document.getElementById("qrModalBody");
+
+  qrBody.innerHTML = `
+    <div class="text-center">
+      <h5 class="mb-3">${title}</h5>
+
+      <img
+        src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(upiLink)}"
+      />
+
+      <p class="small text-muted mt-3">
+        Scan this QR with any UPI app
+      </p>
+
+      <button class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">
+        Close
+      </button>
+
+      <button class="btn lavender-outline-btn ms-2" type="button" data-bs-dismiss="modal">
+        Submit Payment
+      </button>
+    </div>
+  `;
+
+  new bootstrap.Modal(document.getElementById("qrModal")).show();
+}
+
+/* ==========================
+   EDIT USER NAME
+========================== */
+function saveUserInfo() {
+  const editName = document.getElementById("editName");
+  const summaryName = document.getElementById("summaryName");
+
+  if (!editName.value.trim()) {
+    alert("Name cannot be empty");
+    return;
+  }
+
+  summaryName.innerText = editName.value;
+
+  bootstrap.Modal
+    .getInstance(document.getElementById("editInfoModal"))
+    .hide();
+}
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

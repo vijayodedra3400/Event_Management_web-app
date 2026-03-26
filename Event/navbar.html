@@ -1,0 +1,134 @@
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top main-navbar">
+    <div class="container-fluid">
+  
+      <!-- LOGO (always visible) -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="Images/Eventure_Logo.png" height="50" width="80">
+        <b class="ms-2 brand-text">EVENTURE</b>
+      </a>
+  
+      <!-- DESKTOP NAV LINKS -->
+      <div class="collapse navbar-collapse d-none d-lg-flex">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item">
+            <a class="nav-link fw-bold me-3" style="color:#c7acd9" href="registerevent.html">
+                <i class="bi bi-calendar-check"></i> Register Event
+            </a>          
+        </li>
+            <li class="nav-item">
+
+            <a class="nav-link dropdown-toggle active btn-sm" 
+                        href="#" style="color:#c7acd9" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-grid-3x3-gap me-1"></i>Categories
+                        </a>
+                        
+                        <ul class="dropdown-menu dropdown-menu-end bg-secondary-subtle p-3" style="width: 250px; max-height: 300px; color:#b363e7">
+                            <li><a class="dropdown-item" href="academic.html" style="color:#532B88">
+                                <i class="bi bi-journal-text me-2"></i>Academic Events
+                            </a></li>
+                            <li><a class="dropdown-item" href="technical.html" style="color:#532B88">
+                                <i class="bi bi-cpu me-2"></i>Technical Events
+                            </a></li>
+                            <li><a class="dropdown-item" href="cultural.html" style="color:#532B88">
+                                <i class="bi bi-music-note-beamed me-2"></i>Cultural Events
+                            </a></li>
+                            <li><a class="dropdown-item" href="sports.html" style="color:#532B88">
+                                <i class="bi bi-trophy me-2"></i>Sports Events
+                            </a></li>
+                            <li><a class="dropdown-item" href="fun.html" style="color:#532B88">
+                                <i class="bi bi-emoji-laughing me-2"></i>Fun Events
+                            </a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-bold me-3" style="color:#c7acd9" href="registered_events.html">
+                    <i class="bi bi-calendar-check"></i> Registered
+                </a>          
+            </li>
+  
+            <li class="nav-item">
+                <a class="nav-link fw-bold me-3" style="color:#c7acd9" href="event.html">
+                    <i class="bi bi-grid"></i> Browse
+                </a>          
+            </li>
+  
+            <li class="nav-item">
+                <a style="color:#c7acd9" class="nav-link fw-bold d-flex align-items-center" href="#footer">
+                    <i class="bi bi-info-circle me-1" style="font-size: 1.1rem;"></i>About Us
+                </a>          
+            </li>
+  
+            <li class="nav-item me-3">
+                <div id="nav-auth"
+                    class="d-flex align-items-center gap-2 fw-bold"
+                    style="color:#c7acd9;">
+                  <!-- JS will inject signup OR user profile -->
+                </div>
+            </li>
+        </ul>
+      </div>
+      <!-- SMALL LOGOUT MODAL -->
+      <div class="modal fade me-3" id="logoutModal" tabindex="-1">
+        <div class="modal-dialog modal-sm modal-dialog-centered">
+          <div class="modal-content text-center p-3">
+      
+            <div class="modal-body">
+              <p class="mb-3 fw-bold">Do you want to logout?</p>
+      
+              <button class="btn btn-danger w-100 mb-2" id="confirmLogoutBtn">
+                Logout
+              </button>
+      
+              <button class="btn btn-secondary w-100" data-bs-dismiss="modal">
+                Cancel
+              </button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- SIDEBAR BUTTON (ALL SCREENS) -->
+      <button
+        class="btn btn-dark ms-3"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarMenu"
+        aria-label="Menu"
+      >
+        <i class="bi bi-list fs-4"></i>
+      </button>
+  
+    </div>
+  </nav>
+  <div class="offcanvas offcanvas-end sidebar-dark" id="sidebarMenu" data-bs-backdrop="true"
+  data-bs-scroll="false"
+  tabindex="-1">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title brand-text">EVENTURE</h5>
+      <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+  
+    <div class="offcanvas-body">
+      <ul class="nav flex-column gap-2">
+  
+        <li class="text-secondary small">Categories</li>
+        <li><a class="nav-link" href="academic.html">Academic</a></li>
+        <li><a class="nav-link" href="technical.html">Technical</a></li>
+        <li><a class="nav-link" href="cultural.html">Cultural</a></li>
+        <li><a class="nav-link" href="sports.html">Sports</a></li>
+        <li><a class="nav-link" href="fun.html">Fun</a></li>
+        <hr>
+        <li><a class="nav-link" href="registered_events.html">Registered Events</a></li>
+        <li><a class="nav-link" href="event.html">Browse Events</a></li>
+        <li><a class="nav-link" href="#footer">About Us</a></li>
+        <li><a class="nav-link" href="contact.html">Contact us</a></li>
+        <li><a class="nav-link" href="client.html">Client</a></li>
+        <hr>
+        <li id="sidebar-auth"></li>
+
+      </ul>
+    </div>
+  </div>
+
+  

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Events | Eventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+            width: 100%; /* full width */
+            height: 300px; /* fixed height */
+           /* replace with your image path */
+            /* background-size: cover; makes the image cover the div */
+            /* background-position: center; centers the image */
+            /* background-repeat: no-repeat; prevents tiling */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* vertically centers content */
+            align-items: center; /* horizontally centers content */
+            color: white; /* optional: makes text readable on dark images */
+            text-shadow: 0 1px 5px rgba(0,0,0,0.7); /* optional: improves readability */
+        }
+        /* HERO ANIMATION */
+    .hero-section h1{
+    color: #01041d;
+    text-shadow: none;
+    }
+
+    .hero-section p{
+      color: #282c2f;
+      text-shadow: none;
+    }
+
+body {
+    background: linear-gradient(
+           /* #436ebe, */
+           #b5ccf6,
+          #e0e3ea,   /* dark top */
+     
+        #d4d8de,
+        #e5e7eb  
+    );
+    min-height: 100vh;
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar include -->
+<div id="navbar"></div>
+<div class="page-overlay"></div>
+<div class="page-content">
+<div class="hero-section text-center mb-1 reveal">
+    <h1 class="fw-bold">Academic Events</h1>
+    <p >Enhance knowledge • Learn • Compete • Present</p>
+</div>
+
+<div class="container mt-1 mb-5">
+    <div class="row g-4">
+
+        <!-- Workshop -->
+        <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 shadow-sm">
+                <img src="Images/a1.png"  class="card-img-top event-img"  alt="Workshop">
+                <div class="card-body">
+                    <h5 class="card-title">Workshop</h5>
+                    <p class="card-text">Hands-on learning sessions by industry experts.</p>
+                    <p class="small text-muted mb-3">
+                        <i class="bi bi-calendar"></i> 12 March 2026 &nbsp; |
+                        <i class="bi bi-geo-alt"></i> Seminar Hall
+                    </p>
+                    <div class="d-flex gap-2 mt-2">
+
+                        <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                        <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seminar -->
+        <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 shadow-sm">
+                <img src="Images/a2.png"  class="card-img-top event-img"  alt="Seminar">
+                <div class="card-body">
+                    <h5 class="card-title">Seminar</h5>
+                    <p class="card-text">Insightful talks on trending academic topics.</p>
+                    <p class="small text-muted mb-3">
+                        <i class="bi bi-calendar"></i> 15 March 2026 &nbsp; |
+                        <i class="bi bi-geo-alt"></i> Auditorium
+                    </p>
+                    <div class="d-flex gap-2 mt-2">
+
+                    <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                    <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz -->
+        <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 shadow-sm">
+                <img src="Images/a3.png"  class="card-img-top event-img"  alt="Quiz">
+
+                <div class="card-body">
+                    <h5 class="card-title">Quiz Competition</h5>
+                    <p class="card-text">Test your knowledge and analytical skills.</p>
+                    <p class="small text-muted mb-3">
+                        <i class="bi bi-calendar"></i> 18 March 2026 &nbsp; |
+                        <i class="bi bi-geo-alt"></i> Classroom 101
+                    </p>
+                    <div class="d-flex gap-2 mt-2">
+                    <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                    <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paper Presentation -->
+        <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 shadow-sm">
+                <img src="Images/a4.png"  class="card-img-top event-img"  alt="Paper Presentation">
+                <div class="card-body">
+                    <h5 class="card-title">Paper Presentation</h5>
+                    <p class="card-text">Present innovative ideas and research work.</p>
+                    <p class="small text-muted mb-3">
+                        <i class="bi bi-calendar"></i> 20 March 2026 &nbsp; |
+                        <i class="bi bi-geo-alt"></i> Conference Hall
+                    </p>
+                    <div class="d-flex gap-2 mt-2">
+                    <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                    <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Poster Presentation -->
+        <div class="col-12 col-md-4 reveal">
+            <div class="card h-100 shadow-sm">
+                <img src="Images/a5.png"  class="card-img-top event-img"  alt="Poster Presentation">
+                <div class="card-body">
+                    <h5 class="card-title">Poster Presentation</h5>
+                    <p class="card-text">Showcase concepts visually and creatively.</p>
+                    <p class="small text-muted mb-3">
+                        <i class="bi bi-calendar"></i> 22 March 2026 &nbsp; |
+                        <i class="bi bi-geo-alt"></i> Exhibition Area
+                    </p>
+                    <div class="d-flex gap-2 mt-2">
+                    <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                    <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Guest Lecture -->
+        <div class="col-12 col-md-4 animate-card">
+            <div class="card h-100 shadow-sm">
+                <img src="Images/a6.png"  class="card-img-top event-img"  alt="Guest Lecture">
+                <div class="card-body">
+                    <h5 class="card-title">Guest Lecture</h5>
+                    <p class="card-text">Learn from experienced academicians & professionals.</p>
+                    <p class="small text-muted mb-3">
+                        <i class="bi bi-calendar"></i> 25 March 2026 &nbsp; |
+                        <i class="bi bi-geo-alt"></i> Main Hall
+                    </p>
+                    <div class="d-flex gap-2 mt-2">
+                    <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                    <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>                
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<div id="footer"></div>  
+<script type="module" src="academic.js"></script>
+<script type="module" src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scroll.js"></script>
+</body>
+</html>

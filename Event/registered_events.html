@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Events | Registered Events</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        .events-container {
+            min-height: 100vh;
+            background: #f9f9ff;
+            padding: 30px 0;
+        }
+        
+        .events-header {
+            background: linear-gradient(135deg, #9f4dd5 0%, #c7acd9 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(159, 77, 213, 0.2);
+        }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+        
+        .stat-icon.upcoming {
+            background: rgba(76, 209, 55, 0.1);
+            color: #4cd137;
+        }
+        
+        .stat-icon.completed {
+            background: rgba(108, 117, 125, 0.1);
+            color: #6c757d;
+        }
+        
+        .stat-icon.ongoing {
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+        }
+        
+        .stat-icon.cancelled {
+            background: rgba(255, 159, 67, 0.1);
+            color: #ff9f43;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #532B88;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        .events-tabs {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .nav-tabs .nav-link {
+            color: #6c757d;
+            border: none;
+            padding: 10px 20px;
+            font-weight: 500;
+        }
+        
+        .nav-tabs .nav-link.active {
+            color: #9f4dd5;
+            border-bottom: 3px solid #9f4dd5;
+            background: transparent;
+        }
+        
+        .event-card-registered {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .event-card-registered:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .event-status-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .badge-upcoming {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .badge-ongoing {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        
+        .badge-completed {
+            background: #e2e3e5;
+            color: #383d41;
+        }
+        
+        .badge-cancelled {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .event-image {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .event-details-registered {
+            padding: 20px;
+        }
+        
+        .event-category-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .ticket-qr {
+            width: 100px;
+            height: 100px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin: 10px auto;
+        }
+        
+        .ticket-qr i {
+            font-size: 40px;
+            color: #6c757d;
+        }
+        
+        .no-events {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+            background-color: white;
+        }
+        
+        .no-events i {
+            font-size: 4rem;
+            color: #c7acd9;
+            margin-bottom: 20px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-action {
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Events Content -->
+    <div class="events-container">
+        <div class="container">
+            <!-- Header -->
+            <div class="events-header">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-5 fw-bold mb-3">My Events</h1>
+                        <p class="lead mb-0">Manage all your event registrations in one place</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <button class="btn btn-light btn-lg" onclick="printAllTickets()">
+                            <i class="fas fa-print me-2"></i>Print All Tickets
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats -->
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <div class="stat-icon upcoming">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <span class="stat-value" id="upcomingCount">0</span>
+                    <span class="stat-label">Upcoming Events</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon completed">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <span class="stat-value" id="completedCount">0</span>
+                    <span class="stat-label">Completed Events</span>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon cancelled">
+                        <i class="fas fa-times-circle"></i>
+                    </div>
+                    <span class="stat-value" id="cancelledCount">0</span>
+                    <span class="stat-label">Cancelled</span>
+                </div>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="events-tabs">
+                <ul class="nav nav-tabs" id="eventsTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="upcoming-tab" data-bs-toggle="tab" data-bs-target="#upcoming" type="button">
+                            <i class="fas fa-calendar-day me-2"></i>Upcoming
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed" type="button">
+                            <i class="fas fa-check-circle me-2"></i>Completed
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="cancelled-tab" data-bs-toggle="tab" data-bs-target="#cancelled" type="button">
+                            <i class="fas fa-times-circle me-2"></i>Cancelled
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content mt-4 bg-white" id="eventsTabContent">
+                    <!-- Upcoming Events -->
+                    <div class="tab-pane fade show active" id="upcoming">
+                        <div class="row" id="upcomingEventsList">
+                            <!-- Events will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Completed Events -->
+                    <div class="tab-pane fade" id="completed">
+                        <div class="row" id="completedEventsList">
+                            <!-- Events will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Cancelled Events -->
+                    <div class="tab-pane fade" id="cancelled">
+                        <div class="row" id="cancelledEventsList">
+                            <!-- Events will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- Ticket Modal -->
+    <div class="modal fade" id="ticketModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Event Ticket</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="ticketContent">
+                    <!-- Ticket content will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="printTicket()">
+                        <i class="fas fa-print me-2"></i>Print Ticket
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="registered_events.js"></script>
+</body>
+</html>

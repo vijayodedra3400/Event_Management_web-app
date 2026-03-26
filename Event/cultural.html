@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cultural Events | Eventure</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+        width: 100%; /* full width */
+        height: 300px; /* fixed height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertically centers content */
+        align-items: center; /* horizontally centers content */
+        color: white; /* optional: makes text readable on dark images */
+        text-shadow: 0 1px 5px rgba(0,0,0,0.7); /* optional: improves readability */
+    }
+   .hero-section h1{
+    color: #01041d;
+    text-shadow: none;
+    }
+
+    .hero-section p{
+      color: #282c2f;
+      text-shadow: none;
+    }
+body {
+    background: linear-gradient(
+           /* #436ebe, */
+           #d5cff9,
+          #bdcef7,   /* dark top */
+     
+        #d4d8de,
+        #e5e7eb  
+    );
+    min-height: 100vh;
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar include -->
+<div id="navbar"></div>
+<div class="page-overlay"></div>
+  <div class="page-content">
+<div class="hero-section text-center mb-1 reveal">
+    <h1 class="fw-bold display-5">Cultural Events</h1>
+    <p class="fs-5">Music • Dance • Drama • Fashion • Art</p>
+</div>
+
+<div class="container mt-1 mb-5">
+
+    <div class="row g-4">
+        <div class="row g-4">
+            <!-- Dance Competition -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/c1.png" class="card-img-top p-4" alt="Dance">
+                    <div class="card-body">
+                        <h5 class="card-title">Dance Face-Off</h5>
+                        <p class="card-text">Solo, duo, and group dance competitions across genres.</p>
+                        <p class="card-text">Live performances by talented artists.</p>
+                    <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 12 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Auditorium</p>
+                    <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Music Band -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/c2.png" class="card-img-top p-4" alt="Music Band">
+                    <div class="card-body">
+                        <h5 class="card-title">Battle of Bands</h5>
+                        <p class="card-text">Rock, pop, and fusion bands compete for the championship.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 15 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Main Hall</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Drama Play -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/c3.png" class="card-img-top p-4" alt="Drama">
+                    <div class="card-body">
+                        <h5 class="card-title">Drama Festival</h5>
+                        <p class="card-text">Stage plays and street theater performances.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 18 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Stage Area</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Fashion Show -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/c4.png" class="card-img-top p-4" alt="Fashion Show">
+                    <div class="card-body">
+                        <h5 class="card-title">Fashion Show</h5>
+                        <p class="card-text">Stylish runway show presenting creative designs.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 20 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Auditorium</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Art Exhibition -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/c5.png" class="card-img-top p-4" alt="Art">
+                    <div class="card-body">
+                        <h5 class="card-title">Art Exhibition</h5>
+                        <p class="card-text">Display paintings, sculptures, and digital art.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 22 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Exhibition Area</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Poetry Slam -->
+            <div class="col-md-4 reveal">
+                <div class="card h-100 shadow-sm">
+                    <img src="Images/c6.png" class="card-img-top p-4" alt="Poetry">
+                    <div class="card-body">
+                        <h5 class="card-title">Poetry Slam</h5>
+                        <p class="card-text">Express emotions through spoken word and poetry.</p>
+                        <p class="small text-muted mb-3"><i class="bi bi-calendar"></i> 25 Mar 2026 &nbsp; | <i class="bi bi-geo-alt"></i> Classroom 101</p>
+                        <div class="d-flex gap-2 mt-2">
+                            <a href="eventdetails.html" class="btn btn-primary btn-sm">View Details</a>
+                            <a onclick="window.location.href='eventregistration.html?eventId=1oHLZiBXhzb5Wrrf7MnU'" class="btn btn-outline-success btn-sm">Register</a>               
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  </div>
+<div id="footer"></div>
+<script type="module" src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scroll.js"></script>
+</body>
+</html>
